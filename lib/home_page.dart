@@ -7,13 +7,13 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final Map<int, Map<String, dynamic>> map = {
-    0: {'pageName': 'checkbox', 'className': const CheckboxSingle()},
+    0: {'pageName': 'checkbox + Stateful', 'className': const CheckboxSingle()},
     1: {
-      'pageName': 'checkbox_multi',
+      'pageName': 'checkbox_multi List Ver + Stateful',
       'className': const CheckboxListTiles(),
     },
     2: {
-      'pageName': 'checkbox_multi_ver2',
+      'pageName': 'checkbox_multi Map Ver + Stateful',
       'className': const CheckboxListTilesVer2(),
     },
   };

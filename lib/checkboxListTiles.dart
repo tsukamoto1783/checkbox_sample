@@ -14,7 +14,7 @@ class _CheckboxListTilesState extends State<CheckboxListTiles> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("checkbox sample")),
+      appBar: AppBar(title: const Text("checkbox_multi Sample")),
       body: Center(
         child: ListView.separated(
           itemBuilder: (context, index) => CheckboxListTile(
