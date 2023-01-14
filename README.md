@@ -1,16 +1,11 @@
 # checkbox_sample
+チェックボックスの状態管理をいろんなパターンで実装。  
+正解とか不正解とかではなく、こういった方法でも実装できるよねって感じで。
 
-A new Flutter project.
+## zenn記事
+[【Flutter】checkboxの状態管理をいろんなパターンで](https://zenn.dev/tsukatsuka1783/articles/checkbox_handling)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+&nbsp;
+<p>
+<img src="https://user-images.githubusercontent.com/61080605/212461802-fcc37b80-c761-4e21-a7ff-38dff5dbb6f9.gif" width="250" heigth="630">
+</p>
