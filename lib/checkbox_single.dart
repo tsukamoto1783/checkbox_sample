@@ -13,7 +13,7 @@ class _CheckboxSingleState extends State<CheckboxSingle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("hoge")),
+      appBar: AppBar(title: const Text("checkbox sample")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

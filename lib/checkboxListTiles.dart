@@ -8,17 +8,17 @@ class CheckboxListTiles extends StatefulWidget {
 }
 
 class _CheckboxListTilesState extends State<CheckboxListTiles> {
-  final List<String> valueList = ['A', 'B', 'C', 'D'];
+  final List<String> _valueList = ['A', 'B', 'C', 'D'];
   final List<bool> _checkedList = List.generate(4, (index) => false);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("checkbox_multi Sample")),
+      appBar: AppBar(title: const Text("CheckboxListTile List Ver")),
       body: Center(
         child: ListView.separated(
           itemBuilder: (context, index) => CheckboxListTile(
-            title: Text(valueList[index]),
+            title: Text(_valueList[index]),
             subtitle: Text(_checkedList[index] ? "ON" : "OFF"),
             value: _checkedList[index],
             onChanged: (bool? checkedValue) {
@@ -28,10 +28,9 @@ class _CheckboxListTilesState extends State<CheckboxListTiles> {
             },
           ),
           separatorBuilder: (context, index) {
-            // print('separator: $index');
             return const Divider(height: 0.5);
           },
-          itemCount: valueList.length,
+          itemCount: _valueList.length,
         ),
       ),
     );

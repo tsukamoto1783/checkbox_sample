@@ -31,13 +31,14 @@ class CheckboxListTileRiverpodVer2 extends ConsumerWidget {
         child: Column(
           children: checkedMap
               .map((e) => CheckboxListTile(
-                  title: Text(e['value']),
-                  subtitle: Text(e['checked'] ? "ON" : "OFF"),
-                  value: e['checked'],
-                  onChanged: (bool? checkedValue) {
-                    e['checked'] = checkedValue;
-                    changeNotifier.notifyListeners();
-                  }))
+                    title: Text(e['value']),
+                    subtitle: Text(e['checked'] ? "ON" : "OFF"),
+                    value: e['checked'],
+                    onChanged: (bool? checkedValue) {
+                      e['checked'] = checkedValue;
+                      changeNotifier.notifyListeners();
+                    },
+                  ))
               .toList(),
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CheckboxListTileRiverpod extends ConsumerWidget {
   CheckboxListTileRiverpod({Key? key}) : super(key: key);
-  final List<String> valueList = ['A', 'B', 'C', 'D'];
+  final List<String> _valueList = ['A', 'B', 'C', 'D'];
   final AutoDisposeStateProvider<List<bool>> _checkedListProvider =
       StateProvider.autoDispose<List<bool>>((ref) {
     return List.generate(4, (index) => false);
@@ -24,7 +24,7 @@ class CheckboxListTileRiverpod extends ConsumerWidget {
       body: Center(
         child: ListView.separated(
           itemBuilder: (context, index) => CheckboxListTile(
-            title: Text(valueList[index]),
+            title: Text(_valueList[index]),
             subtitle: Text(checkedList[index] ? "ON" : "OFF"),
             value: checkedList[index],
             onChanged: (bool? checkedValue) {
@@ -33,10 +33,9 @@ class CheckboxListTileRiverpod extends ConsumerWidget {
             },
           ),
           separatorBuilder: (context, index) {
-            // print('separator: $index');
             return const Divider(height: 0.5);
           },
-          itemCount: valueList.length,
+          itemCount: _valueList.length,
         ),
       ),
     );

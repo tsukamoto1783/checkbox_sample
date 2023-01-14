@@ -8,7 +8,7 @@ class CheckboxListTilesVer2 extends StatefulWidget {
 }
 
 class _CheckboxListTilesVer2 extends State<CheckboxListTilesVer2> {
-  final List<Map<String, dynamic>> valueMaps = [
+  final List<Map<String, dynamic>> _checkedMaps = [
     {'value': 'A', 'checked': false},
     {'value': 'B', 'checked': false},
     {'value': 'C', 'checked': false},
@@ -18,19 +18,20 @@ class _CheckboxListTilesVer2 extends State<CheckboxListTilesVer2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("checkbox_multi Sample")),
+      appBar: AppBar(title: const Text("CheckboxListTile Map Ver")),
       body: Center(
         child: Column(
-          children: valueMaps
+          children: _checkedMaps
               .map((e) => CheckboxListTile(
-                  title: Text(e['value']),
-                  subtitle: Text(e['checked'] ? "ON" : "OFF"),
-                  value: e['checked'],
-                  onChanged: (bool? checkedValue) {
-                    setState(() {
-                      e['checked'] = checkedValue;
-                    });
-                  }))
+                    title: Text(e['value']),
+                    subtitle: Text(e['checked'] ? "ON" : "OFF"),
+                    value: e['checked'],
+                    onChanged: (bool? checkedValue) {
+                      setState(() {
+                        e['checked'] = checkedValue;
+                      });
+                    },
+                  ))
               .toList(),
         ),
       ),
