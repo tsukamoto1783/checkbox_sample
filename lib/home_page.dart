@@ -3,6 +3,7 @@ import 'package:checkbox_sample/checkboxListTiles.dart';
 import 'package:checkbox_sample/checkboxListTilesRiverpodVer2.dart';
 import 'package:checkbox_sample/checkboxListTilesVer2.dart';
 import 'package:checkbox_sample/checkboxRiverpod.dart';
+import 'package:checkbox_sample/checkboxRiverpodNew.dart';
 import 'package:checkbox_sample/checkbox_single.dart';
 import 'package:flutter/material.dart';
 
@@ -20,16 +21,20 @@ class MyHomePage extends StatelessWidget {
       'className': const CheckboxListTilesVer2(),
     },
     3: {
-      'pageName': 'checkbox + riverpod',
+      'pageName': 'checkbox + StateProvider',
       'className': CheckboxRiverpod(),
     },
     4: {
-      'pageName': 'checkboxListTile List Ver + riverpod',
+      'pageName': 'checkboxListTile List Ver + StateProvider',
       'className': CheckboxListTileRiverpod(),
     },
     5: {
-      'pageName': 'checkboxListTile Map Ver + riverpod',
+      'pageName': 'checkboxListTile Map Ver + StateProvider',
       'className': CheckboxListTileRiverpodVer2(),
+    },
+    6: {
+      'pageName': 'checkboxListTile Map Ver + StateNotifierProvider',
+      'className': CheckboxListTileRiverpodNew(),
     },
   };
 
