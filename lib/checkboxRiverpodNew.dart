@@ -7,16 +7,22 @@ final checkedListProvider =
 );
 
 class CheckedListState extends StateNotifier<List<bool>> {
+  /// 親クラスであるStateNotifierのコンストラクタをsuperで呼び出し、StateNotifierのstateに初期値を設定する。
+  /// 以下の場合だと、state=[false, false, false, false]となる。
+  /// 親クラスのstateを継承するので、CheckedListStateクラスのstateも同じ初期値が設定される。
   CheckedListState() : super(List.generate(4, (index) => false));
 
-  void updateCheckedValue(int index, bool checkedValue) {
+  /// stateのList[index]の値を、checkedValueに変更し、stateを更新（上書き）する。
+  /// stateが更新されると、UIが再ビルドされる。
+  void updateListElement(int index, bool updateValue) {
     state = [
       for (int i = 0; i < state.length; i++)
-        i == index ? checkedValue : state[i],
+        i == index ? updateValue : state[i],
     ];
   }
 }
 
+// class名は変更する
 class CheckboxListTileRiverpodNew extends ConsumerWidget {
   CheckboxListTileRiverpodNew({Key? key}) : super(key: key);
   final List<String> _valueList = ['A', 'B', 'C', 'D'];
@@ -25,7 +31,8 @@ class CheckboxListTileRiverpodNew extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final checkedList = ref.watch(checkedListProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text("Checkbox + Riverpod List Ver")),
+      appBar: AppBar(
+          title: const Text("StateProvider StateNotifierProvider Sample")),
       body: Center(
         child: ListView.separated(
           itemBuilder: (context, index) => CheckboxListTile(
@@ -47,7 +54,7 @@ class CheckboxListTileRiverpodNew extends ConsumerWidget {
               /// なので、StateNotifierの中で定義した、stateを変更するメソッドを呼び出す必要あり。
               ref
                   .watch(checkedListProvider.notifier)
-                  .updateCheckedValue(index, checkedValue!);
+                  .updateListElement(index, checkedValue!);
             },
           ),
           separatorBuilder: (context, index) {

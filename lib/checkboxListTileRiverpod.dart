@@ -28,7 +28,8 @@ class CheckboxListTileRiverpod extends ConsumerWidget {
             subtitle: Text(checkedList[index] ? "ON" : "OFF"),
             value: checkedList[index],
             onChanged: (bool? checkedValue) {
-              checkedList[index] = checkedValue!;
+              ref.read(_checkedListProvider.notifier).state[index] =
+                  checkedValue!;
               changeNotifier.notifyListeners();
             },
           ),
